@@ -5,7 +5,7 @@ let person1 = {
 }
 
 let person2 = {
-    name: "Kacper",
+    name: "Kacper1",
     lastName: "Sokolowski"
 }
 
