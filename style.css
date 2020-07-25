@@ -1,0 +1,31 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    width: 24px;
+    height: 24px;
+}
+
+.slide {
+    display: none;
+}
+
+.active {
+    display: inline-block;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    background-color: grey;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 10px;
+}
