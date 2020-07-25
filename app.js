@@ -1,14 +1,11 @@
-let person1 = {
-    name: "Filip",
-    lastName: "Mamcarczyk",
-    age: 27
-}
+let arrowRight = document.querySelector("#arrow-right");
 
-let person2 = {
-    name: "Kacper1",
-    lastName: "Sokolowski",
-    age: 28,
-}
+let function3 = () => {
+    console.log("strzałka kliknięta!");
+};
 
-console.log(person1.name + " " + person1.lastName);
-console.log(person2.name + " " + person2.lastName);
+arrowRight.addEventListener("click", function3);
+
+
+
+

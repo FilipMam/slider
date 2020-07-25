@@ -4,9 +4,9 @@ main {
     align-items: center;
 }
 
-.arrow {
-    width: 24px;
-    height: 24px;
+#arrow-right {
+    width: 25px;
+    height: 25px;
 }
 
 .slide {
