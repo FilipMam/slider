@@ -13,33 +13,31 @@ let dot1 = document.querySelector("#dot1");
 let dot2 = document.querySelector("#dot2");
 let dot3 = document.querySelector("#dot3");
 let dot4 = document.querySelector("#dot4");
-let slide1 = document.querySelector("#slide1");
-let slide2 = document.querySelector("#slide2");
-let slide3 = document.querySelector("#slide3");
-let slide4 = document.querySelector("#slide4");
 
-let showSlide1 = () => {
+let hideActiveElement = () => {
     let activeElemenet = document.querySelector(".active");
     activeElemenet.classList.remove("active");
-    slide1.classList.add("active");
+};
+
+let showSlide = (slideNumber) => {
+    hideActiveElement();
+    document.querySelector("#slide" + slideNumber).classList.add("active");
+};
+
+let showSlide1 = () => {
+    showSlide(1);
 };
 
 let showSlide2 = () => {
-    let activeElemenet = document.querySelector(".active");
-    activeElemenet.classList.remove("active");
-    slide2.classList.add("active");
+    showSlide(2);
 };
 
 let showSlide3 = () => {
-    let activeElemenet = document.querySelector(".active");
-    activeElemenet.classList.remove("active");
-    slide3.classList.add("active");
+    showSlide(3);
 }
 
 let showSlide4 = () => {
-    let activeElemenet = document.querySelector(".active");
-    activeElemenet.classList.remove("active");
-    slide4.classList.add("active");
+    showSlide(4);
 }
 
 // któryElement?.addEventListener("kiedy?", "co ma się dziać?")
