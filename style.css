@@ -23,7 +23,7 @@ main {
 }
 
 .dot {
-    background-color: red;
+    background-color: grey;
     width: 20px;
     height: 20px;
     border-radius: 50%;
