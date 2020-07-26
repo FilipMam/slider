@@ -24,8 +24,13 @@ main {
 
 .dot {
     background-color: grey;
+    border: solid 3px grey;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     margin: 10px;
+}
+
+.dot-active {
+    background-color: white;
 }

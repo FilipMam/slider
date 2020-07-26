@@ -17,11 +17,15 @@ let dot4 = document.querySelector("#dot4");
 let hideActiveElement = () => {
     let activeElemenet = document.querySelector(".active");
     activeElemenet.classList.remove("active");
+
+    let activeDot = document.querySelector(".dot-active");
+    activeDot.classList.remove("dot-active");    
 };
 
 let showSlide = (slideNumber) => {
     hideActiveElement();
     document.querySelector("#slide" + slideNumber).classList.add("active");
+    document.querySelector("#dot" + slideNumber).classList.add("dot-active");
 };
 
 let showSlide1 = () => {
