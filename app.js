@@ -1,28 +1,33 @@
-// Gdy klikamy na 2 kropke pojawia się 2 drugi obrazek
-
-// 1. Znajdźmy kropkę nr. 2 - done
-// 2. Niech kropka 'słucha' na kliknięcie - done
-// 3. Po kliknięciu, niech pojawi się obrazek nr.2 - done
-    // 3.1 Znaleźć obrazek 2 - done
-    // 3.2 Dodać do obrazka 2 klasę "active" - done
-    // 3.3 Usunąć klasę active z obrazka 1 - done
-        // 3.3.1 - Znaleźć obrazek 1 - done
-        // 3.3.2 - Usunąć klasę active z obrazka 1 - done
+let activeSlideNumber = 3;
 
 let dot1 = document.querySelector("#dot1");
 let dot2 = document.querySelector("#dot2");
 let dot3 = document.querySelector("#dot3");
 let dot4 = document.querySelector("#dot4");
+let dot5 = document.querySelector("#dot5");
+
+let arrowRight = document.querySelector("#arrow-right");
+let arrowLeft = document.querySelector("#arrow-left");
+
+let numberOfSides = document.querySelectorAll(".slide").length;
 
 let hideActiveElement = () => {
     let activeElemenet = document.querySelector(".active");
-    activeElemenet.classList.remove("active");
+    
+    if (activeElemenet) {
+        activeElemenet.classList.remove("active");
+    }
 
     let activeDot = document.querySelector(".dot-active");
-    activeDot.classList.remove("dot-active");    
+    
+    if (activeDot) {
+        activeDot.classList.remove("dot-active");    
+    }    
+    
 };
 
 let showSlide = (slideNumber) => {
+    activeSlideNumber = slideNumber;
     hideActiveElement();
     document.querySelector("#slide" + slideNumber).classList.add("active");
     document.querySelector("#dot" + slideNumber).classList.add("dot-active");
@@ -44,8 +49,34 @@ let showSlide4 = () => {
     showSlide(4);
 }
 
+let showSlide5 = () => {
+    showSlide(5);
+}
+
+let showNextSlide = () => {
+    if (activeSlideNumber === numberOfSides) {
+        showSlide(1);
+    } else {
+        showSlide(activeSlideNumber + 1);    
+    }    
+}
+
+let showPreviousSlide = () => {
+    if (activeSlideNumber === 1) {
+        showSlide(numberOfSides);
+    } else {
+        showSlide(activeSlideNumber - 1);
+    }
+};
+
 // któryElement?.addEventListener("kiedy?", "co ma się dziać?")
 dot1.addEventListener("click", showSlide1);
 dot2.addEventListener("click", showSlide2);
 dot3.addEventListener("click", showSlide3);
 dot4.addEventListener("click", showSlide4);
+dot5.addEventListener("click", showSlide5);
+
+arrowRight.addEventListener("click", showNextSlide);
+arrowLeft.addEventListener("click", showPreviousSlide);
+
+showSlide(activeSlideNumber);
