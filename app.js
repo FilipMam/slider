@@ -69,6 +69,17 @@ let showPreviousSlide = () => {
     }
 };
 
+let onKeyDown = (event) => {
+    if (event.keyCode === 39) {
+        showNextSlide();
+    } 
+    
+    if (event.keyCode === 37) {
+        showPreviousSlide();
+    }
+    
+}
+
 // któryElement?.addEventListener("kiedy?", "co ma się dziać?")
 dot1.addEventListener("click", showSlide1);
 dot2.addEventListener("click", showSlide2);
@@ -79,4 +90,7 @@ dot5.addEventListener("click", showSlide5);
 arrowRight.addEventListener("click", showNextSlide);
 arrowLeft.addEventListener("click", showPreviousSlide);
 
+document.addEventListener("keydown", onKeyDown);
+
 showSlide(activeSlideNumber);
+
