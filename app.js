@@ -1,11 +1,5 @@
 let activeSlideNumber = 3;
 
-let dot1 = document.querySelector("#dot1");
-let dot2 = document.querySelector("#dot2");
-let dot3 = document.querySelector("#dot3");
-let dot4 = document.querySelector("#dot4");
-let dot5 = document.querySelector("#dot5");
-
 let arrowRight = document.querySelector("#arrow-right");
 let arrowLeft = document.querySelector("#arrow-left");
 
@@ -32,26 +26,6 @@ let showSlide = (slideNumber) => {
     document.querySelector("#slide" + slideNumber).classList.add("active");
     document.querySelector("#dot" + slideNumber).classList.add("dot-active");
 };
-
-let showSlide1 = () => {
-    showSlide(1);
-};
-
-let showSlide2 = () => {
-    showSlide(2);
-};
-
-let showSlide3 = () => {
-    showSlide(3);
-}
-
-let showSlide4 = () => {
-    showSlide(4);
-}
-
-let showSlide5 = () => {
-    showSlide(5);
-}
 
 let showNextSlide = () => {
     if (activeSlideNumber === numberOfSides) {
@@ -80,17 +54,16 @@ let onKeyDown = (event) => {
     
 }
 
-// któryElement?.addEventListener("kiedy?", "co ma się dziać?")
-dot1.addEventListener("click", showSlide1);
-dot2.addEventListener("click", showSlide2);
-dot3.addEventListener("click", showSlide3);
-dot4.addEventListener("click", showSlide4);
-dot5.addEventListener("click", showSlide5);
-
 arrowRight.addEventListener("click", showNextSlide);
 arrowLeft.addEventListener("click", showPreviousSlide);
 
 document.addEventListener("keydown", onKeyDown);
 
 showSlide(activeSlideNumber);
+
+for (let i = 0; i < numberOfSides; i = i + 1) {
+    document.querySelector("#dot" + (i+1)).addEventListener("click", () => {
+        showSlide(i+1);
+    });
+}
 
